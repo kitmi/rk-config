@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body style="background: transparent;">
+    <script src="scripts/docstrap.lib.js"></script>
+    <script src="scripts/lunr.min.js"></script>
+    <script src="scripts/fulltext-search.js"></script>
+
+    <script type="text/x-docstrap-searchdb">
+    {"classes.list.html":{"id":"classes.list.html","title":"Classes","body":" rk-config Classes ConfigJsonConfigProvider Events Config#event:loaded Classes Classes Config JsonConfigProvider Events loaded Config loaded event. Type: object Source: config.js × Search results Close "},"index.html":{"id":"index.html","title":"Index","body":" rk-config Classes ConfigJsonConfigProvider Events Config#event:loaded rk-configAn interpolatible config system. Features Multiple data source. Deep override. License MIT × Search results Close "},"Config.html":{"id":"Config.html","title":"Class: Config","body":" rk-config Classes ConfigJsonConfigProvider Events Config#event:loaded Class: Config Config new Config() The config loader Source: config.js Example let fileSource = new JsonConfigProvider('file path', 'base name', 'production'); let config = new Config(fileSource); config.load()...; let dbSource = new DbConfigProvider(config.data.dbConnection); config.provider = dbSource; config.reload()...; Extends EventEmitter Members data :object The config data Type: object Source: config.js provider :object The config data source provider Type: object Source: config.js Methods load() Start loading the config files Source: config.js Returns: Type Promise.&lt;object&gt; reload() Reload config and override existing Source: config.js Returns: Type Promise.&lt;object&gt; Events loaded Config loaded event. Type: object Source: config.js × Search results Close "},"JsonConfigProvider.html":{"id":"JsonConfigProvider.html","title":"Class: JsonConfigProvider","body":" rk-config Classes ConfigJsonConfigProvider Events Config#event:loaded Class: JsonConfigProvider JsonConfigProvider new JsonConfigProvider(configDir, baseName [, envFlag]) JSON file config data source Parameters: Name Type Argument Description configDir string The base directory of config files baseName string The basename of the config file envFlag string &lt;optional&gt; Environment flag Source: jsonConfigProvider.js Methods defaultNaming() The default config file naming functor Source: jsonConfigProvider.js envSpecificNaming() The environment-aware config file naming functor Source: jsonConfigProvider.js load() Start loading the config files Source: jsonConfigProvider.js Returns: Type Promise × Search results Close "}}
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Searcher.init();
+        });
+
+        $(window).on("message", function(msg) {
+            var msgData = msg.originalEvent.data;
+
+            if (msgData.msgid != "docstrap.quicksearch.start") {
+                return;
+            }
+
+            var results = Searcher.search(msgData.searchTerms);
+
+            window.parent.postMessage({"results": results, "msgid": "docstrap.quicksearch.done"}, "*");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "rk-config",
+  "version": "1.0.0",
+  "description": "An interpolatible config system.",
+  "main": "index.js",
+  "scripts": {
+    "doc": "./node_modules/.bin/jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './doc' -r --verbose ./lib",
+    "test": "node_modules/.bin/mocha -R spec -t 5000 test/*.mocha.js",
+    "cover": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R dot -t 5000 test/*.mocha.js",
+    "travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- -R dot -t 5000 test/*.mocha.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitmi/rk-config.git"
+  },
+  "keywords": [
+    "config"
+  ],
+  "author": "Rockie Guo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kitmi/rk-config/issues"
+  },
+  "homepage": "https://github.com/kitmi/rk-config#readme",
+  "dependencies": {
+    "rk-utils": "^1.0.1",
+    "swig-templates": "^2.0.2"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "ink-docstrap": "^1.3.0",
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.5.4",
+    "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "should": "^13.0.0"
+  }
+}
