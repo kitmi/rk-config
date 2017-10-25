@@ -1,6 +1,6 @@
 {
   "name": "rk-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An interpolatible config system.",
   "main": "index.js",
   "scripts": {

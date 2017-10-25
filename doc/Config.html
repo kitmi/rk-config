@@ -205,6 +205,82 @@
         <dl>
             
 <hr>
+<dt class="name" id="autoInterpolate">
+    <h4 id="autoInterpolate"><span class="type-signature"></span>autoInterpolate<span class="type-signature"> :boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether to interpolate automatically after loading</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		config.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
 <dt class="name" id="data">
     <h4 id="data"><span class="type-signature"></span>data<span class="type-signature"> :object</span></h4>
 
@@ -364,7 +440,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".interpolate"><span class="type-signature">&lt;static> </span>interpolate(obj, variables)</h4>
+    <h4 class="name" id="interpolate"><span class="type-signature"></span>interpolate(variables)</h4>
     
     
 </dt>
@@ -372,7 +448,7 @@
 
     
     <div class="description">
-        <p>Interpolate all template strings hived under the object with given variables</p>
+        <p>Interpolate the loaded config</p>
     </div>
     
 
@@ -407,30 +483,6 @@
 
         <tr>
             
-                <td class="name"><code>obj</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>variables</code></td>
             
 
@@ -448,7 +500,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last"><p>variables</p></td>
         </tr>
 
     
@@ -521,208 +573,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".tryInterpolateStringValue"><span class="type-signature">&lt;static> </span>tryInterpolateStringValue(strVal, context, variables)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Check a string whether is an interpolatible template and interpolate it if yes</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>strVal</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>context</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>variables</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		config.js
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="load"><span class="type-signature"></span>load()</h4>
+    <h4 class="name" id="load"><span class="type-signature"></span>load(variables)</h4>
     
     
 </dt>
@@ -739,6 +590,56 @@
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>variables</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>variables</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
