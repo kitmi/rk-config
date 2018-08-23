@@ -16,7 +16,7 @@ describe('bvt', function () {
         it('load config', function (done) {
             let config = new Config(new JsonConfigProvider(cfgDir, 'test', 'production'));
 
-            config.load().then(cfg => {
+            config.load_().then(cfg => {
                 cfg.should.have.keys('key1');
                 cfg['key1'].should.have.keys('key1_1', 'key1_2', 'key1_3');
                 cfg['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });
@@ -30,13 +30,13 @@ describe('bvt', function () {
         it('reload config', function (done) {
             let config = new Config(new JsonConfigProvider(cfgDir, 'test'));
 
-            config.load().then(jsonDevCfg => {
+            config.load_().then(jsonDevCfg => {
                 jsonDevCfg.should.have.keys('key1');
                 jsonDevCfg.key1.should.have.keys('key1_1', 'key1_2', 'key1_4');
                 jsonDevCfg.key1.key1_2.should.equal('original1');
 
                 config.provider = new JsConfigProvider(cfgDir, 'test');
-                return config.reload();
+                return config.reload_();
             }).then(cfg => {
 
                 cfg.should.have.keys('key1');
@@ -54,7 +54,7 @@ describe('bvt', function () {
         it('interpolated config', function (done) {
             let config = new Config(new JsonConfigProvider(cfgDir, 'test-itpl'));
 
-            config.load({ name: 'Bob', place: 'Sydney', value1: 10, value2: 20 }).then(cfg => {
+            config.load_({ name: 'Bob', place: 'Sydney', value1: 10, value2: 20 }).then(cfg => {
 
                 cfg.should.have.keys('key', 'key2');
                 cfg['key'].should.be.exactly('Hello Bob, welcome to Sydney!');
@@ -74,12 +74,12 @@ describe('bvt', function () {
         it('rewrite config', function (done) {
             let config = new Config(new JsonConfigProvider(cfgDir, 'test', 'production'));
 
-            config.load().then(cfg => {
+            config.load_().then(cfg => {
                 config.provider.defConfig.key1.key1_2 = 'modified1';
                 config.provider.esConfig.key1.key1_3 = 'modified2';
 
-                return config.provider.save();
-            }).then(() => config.load()).then(cfg2 => {
+                return config.provider.save_();
+            }).then(() => config.load_()).then(cfg2 => {
                 cfg2.should.have.keys('key1');
                 cfg2['key1'].should.have.keys('key1_1', 'key1_2', 'key1_3');
                 cfg2['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });
@@ -88,7 +88,7 @@ describe('bvt', function () {
 
                 config.provider.defConfig.key1.key1_2 = 'original1';
                 config.provider.esConfig.key1.key1_3 = 'original2';
-                return config.provider.save();
+                return config.provider.save_();
             }).then(() => done()).catch(done);
 
         });
