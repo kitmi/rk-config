@@ -1,6 +1,6 @@
 {
   "name": "rk-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An interpolatible config system.",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/kitmi/rk-config#readme",
   "dependencies": {
-    "rk-utils": "^2.1.1",
-    "swig-templates": "^2.0.2"
+    "rk-utils": "^2.1.2",
+    "swig-templates": "^2.0.3"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
