@@ -1,15 +1,16 @@
 {
-    "key": "#!es6:Hello ${name}, welcome to ${place}!",
+    "key": "#!jst:Hello ${name}, welcome to ${place}!",
     "key2": {
         "array": [
-            "#!es6:value1: ${value1}",
-            "#!es6:value2: ${value2}",
-            "#!es6:sum: ${value1 + value2}"
+            "#!jst:value1: ${value1}",
+            "#!jst:value2: ${value2}",
+            "#!jst:sum: ${value1 + value2}"
         ],
         "object": {
             "non": "nothing",
-            "itpl": "#!es6:${(new Date()).toString()}",
+            "itpl": "#!jst:${(new Date()).toString()}",
             "swig": "#!swig:{{ value1 }}"
-        }
+        },
+        "js": "#!jsv:100+200*0.5"
     }
 }

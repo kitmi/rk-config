@@ -65,6 +65,7 @@ describe('bvt', function () {
                 cfg['key2']['object'].should.have.keys('non', 'itpl', 'swig');
                 cfg['key2']['object']['non'].should.equal('nothing');
                 cfg['key2']['object']['swig'].should.equal('10');
+                cfg['key2']['js'].should.be.exactly(200);
 
                 done();
 
