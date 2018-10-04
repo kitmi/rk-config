@@ -36,7 +36,7 @@ describe('bvt', function () {
                 jsonDevCfg.key1.key1_2.should.equal('original1');
 
                 config.provider = new JsConfigProvider(cfgDir, 'test');
-                return config.reload_();
+                return config.load_();
             }).then(cfg => {
 
                 cfg.should.have.keys('key1');
@@ -79,17 +79,36 @@ describe('bvt', function () {
             config.load_().then(cfg => {
                 config.provider.defConfig.key1.key1_2 = 'modified1';
                 config.provider.esConfig.key1.key1_3 = 'modified2';
+                config.provider.updateItem('key9.key10', 'newly added');
 
                 return config.provider.save_();
-            }).then(() => config.load_()).then(cfg2 => {
+            }).then(() => config.reload_()).then(cfg2 => {
                 cfg2.should.have.keys('key1');
                 cfg2['key1'].should.have.keys('key1_1', 'key1_2', 'key1_3');
                 cfg2['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });
                 cfg2['key1']['key1_2'].should.equal("modified1");
                 cfg2['key1']['key1_3'].should.equal("modified2");
+                cfg2['key9']['key10'].should.equal("newly added");
 
                 config.provider.defConfig.key1.key1_2 = 'original1';
                 config.provider.esConfig.key1.key1_3 = 'original2';
+                delete config.provider.esConfig.key9;
+                return config.provider.save_();
+            }).then(() => done()).catch(done);
+
+        });
+
+        it('rewrite js', function (done) {
+            let config = new Config(new JsConfigProvider(cfgDir, 'test'));
+
+            config.load_().then(cfg => {                
+                cfg['key1']['key1_3'].should.equal("reloaded for dev");
+                config.provider.updateItem('key1.key1_3', 'modified');                
+
+                return config.provider.save_();
+            }).then(() => config.reload_()).then(cfg2 => {                
+                cfg2['key1']['key1_3'].should.equal("modified");                
+                config.provider.updateItem('key1.key1_3', "reloaded for dev");
                 return config.provider.save_();
             }).then(() => done()).catch(done);
 
