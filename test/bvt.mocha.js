@@ -7,10 +7,10 @@
 const should = require('should');
 const assert = require('assert');
 const path = require('path');
-const ConfigLoader = require('../lib/ConfigLoader');
-const JsonConfigProvider = require('../lib/JsonConfigProvider');
-const JsConfigProvider = require('../lib/JsConfigProvider');
-const EnvAwareConfigProviderF = require('../lib/EnvAwareConfigProviderF');
+const ConfigLoader = require('../lib/ConfigLoader.js');
+const JsonConfigProvider = require('../lib/JsonConfigProvider.js');
+const JsConfigProvider = require('../lib/JsConfigProvider.js');
+const EnvAwareConfigProviderF = require('../lib/EnvAwareConfigProviderF.js');
 const EnvAwareJsonConfigProvider = EnvAwareConfigProviderF('.json', JsonConfigProvider, 'default'); 
 const EnvAwareJsConfigProvider = EnvAwareConfigProviderF('.js', JsConfigProvider, 'default'); 
 
