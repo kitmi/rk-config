@@ -7,7 +7,7 @@
     "doc": "./node_modules/.bin/jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './doc' -r --verbose ./lib",
     "test": "node_modules/.bin/mocha -R spec -t 5000 test/*.mocha.js",
     "cover": "nyc --reporter=html --reporter=text mocha -t 5000 test/*.mocha.js",
-    "travis": "nyc --reporter=lcovonly mocha -t 5000 test/*.mocha.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "travis": "nyc --reporter=lcovonly mocha -t 10000 test/*.mocha.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
