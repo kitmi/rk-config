@@ -8,8 +8,7 @@
         ],
         "object": {
             "non": "nothing",
-            "itpl": "#!jst:${(new Date()).toString()}",
-            "swig": "#!swig:{{ value1 }}"
+            "itpl": "#!jst:${(new Date()).toString()}"
         },
         "jsv1": "#!jsv:100+200*0.5",
         "jsv2": "#!jsv:[name, place].join(' ')"

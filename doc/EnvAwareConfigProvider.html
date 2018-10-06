@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>rk-config Class: JsonConfigProvider</title>
+	<title>rk-config Class: EnvAwareConfigProvider</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,13 +72,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: JsonConfigProvider</h1>
+	<h1 class="page-title">Class: EnvAwareConfigProvider</h1>
 <section>
 
 <header>
     
         <h2>
-        JsonConfigProvider
+        EnvAwareConfigProvider
         </h2>
         
     
@@ -91,7 +91,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="JsonConfigProvider"><span class="type-signature"></span>new JsonConfigProvider(filePath)</h4>
+    <h4 class="name" id="EnvAwareConfigProvider"><span class="type-signature"></span>new EnvAwareConfigProvider(configDir, baseName [, envFlag])</h4>
     
     
 </dt>
@@ -99,7 +99,7 @@
 
     
     <div class="description">
-        <p>JSON file config data source</p>
+        <p>Environment-aware config provider</p>
     </div>
     
 
@@ -122,7 +122,11 @@
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -134,7 +138,7 @@
 
         <tr>
             
-                <td class="name"><code>filePath</code></td>
+                <td class="name"><code>configDir</code></td>
             
 
             <td class="type">
@@ -148,10 +152,98 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>The path of config file</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The base directory of config files</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>baseName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The basename of the config file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>envFlag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "development"
+                
+                </td>
+            
+
+            <td class="description last"><p>Environment flag</p></td>
         </tr>
 
     
@@ -193,7 +285,7 @@
 	
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
-		JsonConfigProvider.js
+		EnvAwareConfigProviderF.js
 	</dd>
 	
 
@@ -233,86 +325,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="config">
-    <h4 id="config"><span class="type-signature"></span>config<span class="type-signature"> :object</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The loaded config</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		JsonConfigProvider.js
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -322,7 +334,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getItem"><span class="type-signature"></span>getItem(key, defaultValue)</h4>
+    <h4 class="name" id=".getItem"><span class="type-signature">&lt;static> </span>getItem(key, defaultValue)</h4>
     
     
 </dt>
@@ -448,7 +460,7 @@
 	
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
-		JsonConfigProvider.js
+		EnvAwareConfigProviderF.js
 	</dd>
 	
 
@@ -499,7 +511,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="load_"><span class="type-signature">&lt;async> </span>load_()</h4>
+    <h4 class="name" id=".load_"><span class="type-signature">&lt;async, static> </span>load_()</h4>
     
     
 </dt>
@@ -551,7 +563,7 @@
 	
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
-		JsonConfigProvider.js
+		EnvAwareConfigProviderF.js
 	</dd>
 	
 
@@ -602,7 +614,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="save_"><span class="type-signature">&lt;async> </span>save_()</h4>
+    <h4 class="name" id=".save_"><span class="type-signature">&lt;async, static> </span>save_()</h4>
     
     
 </dt>
@@ -654,7 +666,7 @@
 	
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
-		JsonConfigProvider.js
+		EnvAwareConfigProviderF.js
 	</dd>
 	
 
@@ -705,7 +717,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setItem"><span class="type-signature"></span>setItem(key, value)</h4>
+    <h4 class="name" id=".setItem"><span class="type-signature">&lt;static> </span>setItem(key, value)</h4>
     
     
 </dt>
@@ -831,7 +843,7 @@
 	
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
-		JsonConfigProvider.js
+		EnvAwareConfigProviderF.js
 	</dd>
 	
 

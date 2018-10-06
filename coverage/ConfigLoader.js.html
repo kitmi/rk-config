@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for rk-config/lib/config.js</title>
+    <title>Code coverage report for ConfigLoader.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">rk-config/lib</a> config.js
+      <a href="index.html">All files</a> ConfigLoader.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.74% </span>
+        <span class="strong">96.36% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>54/57</span>
+        <span class='fraction'>53/55</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">72.73% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>16/22</span>
+        <span class='fraction'>15/20</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.34% </span>
+        <span class="strong">96.15% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>50/53</span>
+        <span class='fraction'>50/52</span>
       </div>
     </div>
     <p class="quiet">
@@ -189,14 +189,17 @@
 <a name='L141'></a><a href='#L141'>141</a>
 <a name='L142'></a><a href='#L142'>142</a>
 <a name='L143'></a><a href='#L143'>143</a>
-<a name='L144'></a><a href='#L144'>144</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -204,6 +207,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -279,8 +285,8 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -293,13 +299,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">53x</span>
-<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -313,13 +315,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -336,20 +338,25 @@
 &nbsp;
 const vm = require('vm');
 const Util = require('rk-utils');
-const swig = require('swig-templates');
 const _ = Util._;
+&nbsp;
+const JsonConfigProvider = require('./JsonConfigProvider');
+const EnvAwareConfigProviderF = require('./EnvAwareConfigProviderF');
+const EnvAwareJsonConfigProvider = EnvAwareConfigProviderF('.json', JsonConfigProvider, 'default');
 &nbsp;
 const JS_VALUE_TOKEN = 'jsv';
 const JS_TEMPLATE_TOKEN = 'jst';
-const SWIG_TOKEN = 'swig';
 const PROCESSOR_PREFIX = '#!';
 &nbsp;
 const PrefixMap = new Map();
 PrefixMap.set(JS_VALUE_TOKEN, (strVal, variables) =&gt; vm.runInNewContext('() =&gt; (' + strVal + ')', variables)());
 PrefixMap.set(JS_TEMPLATE_TOKEN, (strVal, variables) =&gt; vm.runInNewContext(Util.quote(strVal, '`'), variables));
-PrefixMap.set(SWIG_TOKEN, (strVal, variables) =&gt; swig.render(strVal, { locals: variables }));
 &nbsp;
-class Config {
+class ConfigLoader {
+    static createEnvAwareJsonLoader(configDir, baseName, envFlag) {        
+        return new ConfigLoader(new EnvAwareJsonConfigProvider(configDir, baseName, envFlag))
+    }
+&nbsp;
     /**
      * The config loader
      * @constructs Config
@@ -441,10 +448,6 @@ class Config {
                     }
                 }
             } else {
-                <span class="missing-if-branch" title="if path not taken" >I</span>if (!_.isArray(node)) {
-<span class="cstat-no" title="statement not covered" >                    throw new Error('Unexpected behavior');</span>
-                }
-&nbsp;
                 let l = node.length;
                 for (let i = 0; i &lt; l; i++) {
                     interpolateElement(node, i, node[i]);
@@ -475,16 +478,16 @@ class Config {
     }
 }
 &nbsp;
-module.exports = Config;</pre></td></tr>
+module.exports = ConfigLoader;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 05 2018 00:12:49 GMT+1000 (AEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 07 2018 00:47:54 GMT+1000 (AEST)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -492,7 +495,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
-<script src="../../block-navigation.js"></script>
+<script src="sorter.js"></script>
+<script src="block-navigation.js"></script>
 </body>
 </html>
