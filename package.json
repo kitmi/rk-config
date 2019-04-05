@@ -24,7 +24,7 @@
   "homepage": "https://github.com/kitmi/rk-config#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
-    "rk-utils": "^2.2.0"
+    "rk-utils": "^2.2.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
