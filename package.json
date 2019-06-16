@@ -1,6 +1,6 @@
 {
   "name": "rk-config",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "An environment-aware config system.",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/kitmi/rk-config#readme",
   "dependencies": {
-    "bluebird": "^3.5.3",
     "rk-utils": "^2.2.3"
   },
   "devDependencies": {
