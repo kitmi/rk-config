@@ -1,6 +1,6 @@
 {
   "name": "rk-config",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "An environment-aware config system.",
   "main": "index.js",
   "scripts": {
@@ -22,10 +22,11 @@
     "url": "https://github.com/kitmi/rk-config/issues"
   },
   "homepage": "https://github.com/kitmi/rk-config#readme",
-  "dependencies": {
-    "rk-utils": "^2.2.3"
+  "peerDependencies": {
+    "rk-utils": "^2.2.4"
   },
   "devDependencies": {
+    "rk-utils": "^2.2.4",
     "coveralls": "^3.0.2",
     "ink-docstrap": "^1.3.2",
     "jsdoc": "^3.6.2",

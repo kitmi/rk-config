@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">93.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>14/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">93.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>14/15</span>
       </div>
     </div>
     <p class="quiet">
@@ -114,17 +114,11 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +143,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,14 +193,7 @@ class JsonConfigProvider {
     /**
      * JSON file config data source
      * @constructs JsonConfigProvider
-     * @param {string} configDir - The base directory of config files
-     * @param {string} baseName - The basename of the config file
-     * @param {string} [envFlag] - Environment flag
-     * @param {object} [opts] - Extra options
-     * @property {function} [opts.defaultNaming] - Naming convention of default config file
-     * @property {function} [opts.envSpecificNaming] - Naming convention of env-specific config file
-     * @property {generator} [opts.readFile] - Customized read file generator function
-     * @property {generator} [opts.writeFile] - Customized write file generator function
+     * @param {string} filePath - The path of config file
      */
     constructor(filePath) {
         this.filePath = filePath;
@@ -213,16 +208,24 @@ class JsonConfigProvider {
     
     /**
      * Start loading the config files
-     * @returns {Promise}
+     * @returns {Promise.&lt;object&gt;}
      */
-    async load_() {        
-        this.config = (await fs.pathExists(this.filePath)) ? (await fs.readJson(this.filePath)) : {};
+    async load_(logger) {        
+        if (await fs.pathExists(this.filePath)) {
+            this.config = await fs.readJson(this.filePath);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (logger) {
+<span class="cstat-no" title="statement not covered" >                logger.log('info', `Configuration is loaded from "${this.filePath}"`);                        </span>
+            }
+        } else {
+            this.config = {};            
+        }
+        
         return this.config;
     }    
 &nbsp;
     /**
      * Start saving the config to files
-     * @returns {*}
+     * @returns {Promise.&lt;*&gt;}
      */
     async save_() {
         await fs.outputJson(this.filePath, this.config, { spaces: 4 });
@@ -256,7 +259,7 @@ module.exports = JsonConfigProvider;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 07 2018 00:47:54 GMT+1000 (AEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jun 22 2019 17:35:34 GMT+1000 (Australian Eastern Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>
