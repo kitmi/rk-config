@@ -23,9 +23,8 @@ describe('bvt', function () {
 
             config.load_().then(cfg => {
                 cfg.should.have.keys('key1');
-                cfg['key1'].should.have.keys('key1_1', 'key1_2', 'key1_3');
-                cfg['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });
-                cfg['key1']['key1_2'].should.equal("original1");
+                cfg['key1'].should.have.keys('key1_1', 'key1_3');
+                cfg['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });                
                 cfg['key1']['key1_3'].should.equal("original2");
 
                 done();
@@ -86,13 +85,13 @@ describe('bvt', function () {
                 return config.provider.save_();
             }).then(() => config.reload_()).then(cfg2 => {
                 cfg2.should.have.keys('key1');
-                cfg2['key1'].should.have.keys('key1_1', 'key1_2', 'key1_3');
+                cfg2['key1'].should.have.keys('key1_1', 'key1_3');
                 cfg2['key1']['key1_1'].should.be.eql({ key1_1_2: 'value1_1_2_override', key1_1_1: 'value1_1_1' });
                 
                 let value = config.provider.getItem('key9.key10')
                 value.should.equal("newly added");
                 
-                delete config.provider._envConfigProvider.config.key9;
+                delete config.providnpmer._envConfigProvider.config.key9;
                 value = config.provider._envConfigProvider.getItem('key9.key10');
                 should.not.exist(value);
 
