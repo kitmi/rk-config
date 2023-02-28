@@ -1,4 +1,4 @@
-# rk-config
+# rk-config [deprecated, can be seemlessly replaced by https://github.com/genx-tech/gx-config]
 ![Build Status](https://travis-ci.org/kitmi/rk-config.svg?branch=master) ![Coverage Status](https://coveralls.io/repos/github/kitmi/rk-config/badge.svg?branch=master)
 
 An environment-aware config system.
